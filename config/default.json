@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://guillaume1234:guillaume1234@contactkeeper-j5i2o.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "yKd6d8B&G1weyVEJJ781eRjc!lU6KVE%Yls6lJjDIVdJGmUHb%yKd6d8B&G1weyVEJJ781eRjc!lU6KVE%Yls6lJjDIVdJGmUHb%"
+}
