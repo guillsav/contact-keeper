@@ -3,14 +3,18 @@ import PropTypes from "prop-types"
 import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import AuthContext from "../../context/auth/authContext"
+import ContactContext from "../../context/contact/contactContext"
 
 const Navbar = ({ title, icon, history }) => {
   const authContext = useContext(AuthContext)
+  const contactContext = useContext(ContactContext)
 
   const { isAuthenticated, logout, user } = authContext
+  const { clearContacts } = contactContext
 
   const onLogout = () => {
     logout()
+    clearContacts()
     history.push("/login")
   }
 
