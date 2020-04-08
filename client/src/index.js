@@ -6,20 +6,23 @@ import { BrowserRouter as Router } from "react-router-dom"
 import AuthState from "./context/auth/AuthState"
 import AlertState from "./context/alert/AlerState"
 import ContactState from "./context/contact/ContactState"
+import setAuthToken from "./utils/setAuthToken"
 
 import App from "./App"
 
+if (localStorage.token) {
+  setAuthToken(localStorage.token)
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <AuthState>
-      <ContactState>
-        <AlertState>
-          <Router>
-            <App />
-          </Router>
-        </AlertState>
-      </ContactState>
-    </AuthState>
-  </React.StrictMode>,
+  <AuthState>
+    <ContactState>
+      <AlertState>
+        <Router>
+          <App />
+        </Router>
+      </AlertState>
+    </ContactState>
+  </AuthState>,
   document.getElementById("root")
 )
